@@ -2,5 +2,5 @@
 
 # Configuration for the CodeInsight Agent framework
 ---
-version: 2.19
+version: 2.19.0
 repository_root: "http://34.222.9.125:8001/artifactory/generic-local/cia/cloudfoundry"
