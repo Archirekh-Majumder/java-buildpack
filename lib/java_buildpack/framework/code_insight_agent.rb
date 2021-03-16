@@ -9,8 +9,8 @@ module JavaBuildpack
     # Encapsulates the functionality for enabling zero-touch JRebel support.
     class CodeInsightAgent < JavaBuildpack::Component::VersionedDependencyComponent
 
-      def initialize(context, &version_validator)
-        super(context, &version_validator)
+      def initialize(context)
+        super(context)
         @component_name = 'CodeInsight-Java'
       end
 
