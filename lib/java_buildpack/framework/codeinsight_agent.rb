@@ -30,8 +30,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::VersionedDependencyComponent#supports?)
       def supports?
-        codeinsight_configured?(@droplet.sandbox + 'CodeInsight-Java.jar') &&
-        codeinsight_configured?(@droplet.sandbox + 'CodeInsight-Java.xml')
+        codeinsight_configured?(@application.root + 'META-INF/MANIFEST.MF')
       end
 
       private
