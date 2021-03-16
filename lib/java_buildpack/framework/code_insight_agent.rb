@@ -40,7 +40,7 @@ module JavaBuildpack
       end
 
       def agent_jar
-        @droplet.sandbox + 'CodeInsight-Java/CodeInsight-Java.jar'
+        @droplet.sandbox + 'CodeInsight-Java.jar'
       end
 
     end
