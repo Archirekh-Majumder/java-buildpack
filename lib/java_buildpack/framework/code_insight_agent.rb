@@ -16,7 +16,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        download_zip
+        download_zip(false)
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
@@ -40,7 +40,7 @@ module JavaBuildpack
       end
 
       def agent_jar
-        @droplet.sandbox + 'CodeInsight-Java.jar'
+        @droplet.sandbox + 'CodeInsight-Java/CodeInsight-Java.jar'
       end
 
     end
