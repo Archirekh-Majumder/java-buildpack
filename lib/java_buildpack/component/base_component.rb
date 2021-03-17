@@ -156,7 +156,7 @@ module JavaBuildpack
 
                 FileUtils.mkdir_p target_directory.parent
                 FileUtils.mv Pathname.new(root).children.first, target_directory
-                if Pathname.new(root).children[1].exist?
+                if Pathname.new(root).children[1].exist? && (Pathname.new(root).children[1] == CodeInsight-Java.xml)
                   FileUtils.mv Pathname.new(root).children[1], target_directory
                 end
               end
