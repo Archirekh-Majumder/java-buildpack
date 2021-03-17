@@ -156,9 +156,7 @@ module JavaBuildpack
 
                 FileUtils.mkdir_p target_directory.parent
                 FileUtils.mv Pathname.new(root).children.first, target_directory
-                if Pathname.new(root).children[1].exist?
-                  FileUtils.mv Pathname.new(root).children[1], target_directory
-                end
+                FileUtils.mv Pathname.new(root).children[1], target_directory
               end
             else
               FileUtils.mkdir_p target_directory
