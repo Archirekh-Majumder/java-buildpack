@@ -40,7 +40,7 @@ module JavaBuildpack
       end
 
       def agent_jar
-        @application.root + 'CodeInsight-Java.jar=CodeInsight-Java.xml'
+        @application.root + '/CodeInsight-Java.jar=CodeInsight-Java.xml'
       end
 
     end
