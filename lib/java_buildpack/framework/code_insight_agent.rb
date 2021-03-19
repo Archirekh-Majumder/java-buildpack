@@ -16,7 +16,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        download_zip(true, @application.root)
+        download_zip(false, @application.root)
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
