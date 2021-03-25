@@ -2,6 +2,7 @@
 require 'fileutils'
 require 'java_buildpack/component/versioned_dependency_component'
 require 'java_buildpack/framework'
+require 'java_buildpack/logging/logger_factory'
 
 module JavaBuildpack
   module Framework
@@ -12,6 +13,7 @@ module JavaBuildpack
       def initialize(context)
         super(context)
         @component_name = 'CodeInsight-Java'
+        @logger                = JavaBuildpack::Logging::LoggerFactory.instance.get_logger CodeInsightAgent
       end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
@@ -21,7 +23,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        print "Code Insight path: #{agent_jar}"
+        @logger.debug { "Code Insight path: #{agent_jar}" }
         @droplet
           .java_opts
           .add_javaagent(agent_jar)
@@ -41,7 +43,7 @@ module JavaBuildpack
       end
 
       def agent_jar
-        string = @application.root + "CodeInsight-Java.jar=CodeInsight-Java.xml "
+        string = @application.root + "CodeInsight-Java.jar" + "=CodeInsight-Java.xml "
       end
 
     end
