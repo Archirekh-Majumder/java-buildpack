@@ -2,7 +2,6 @@
 require 'fileutils'
 require 'java_buildpack/component/versioned_dependency_component'
 require 'java_buildpack/framework'
-require 'java_buildpack/logging/logger_factory'
 
 module JavaBuildpack
   module Framework
@@ -22,7 +21,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        @logger.debug { "Code Insight path: " + agent_jar }
+        print "Code Insight path: " + agent_jar
         @droplet
           .java_opts
           .add_javaagent(agent_jar)
