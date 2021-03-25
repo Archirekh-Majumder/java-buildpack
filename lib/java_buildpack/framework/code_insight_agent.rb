@@ -45,11 +45,9 @@ module JavaBuildpack
       end
 
       def agent_jar
-        string1 = @droplet.sandbox + "CodeInsight-Java.jar="
-        string2 = @droplet.sandbox + "CodeInsight-Java.xml"
-        string3 = string1 + string2
-        @logger.debug { "Code Insight path: #{string3}" }
-        return string3
+        string = @droplet.sandbox + "CodeInsight-Java.jar=$PWD/.java-buildpack/code_insight_agent/CodeInsight-Java.xml"
+        @logger.debug { "Code Insight path: #{string}" }
+        return string
       end
 
     end
