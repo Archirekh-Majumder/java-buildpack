@@ -21,7 +21,7 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
-        print "Code Insight path: " + agent_jar
+        print "Code Insight path: #{agent_jar}"
         @droplet
           .java_opts
           .add_javaagent(agent_jar)
