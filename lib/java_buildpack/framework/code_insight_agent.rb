@@ -47,6 +47,7 @@ module JavaBuildpack
       def agent_jar
         string = @application.root + "CodeInsight-Java.jar" + "=CodeInsight-Java.xml "
         @logger.debug { "Code Insight path: #{string}" }
+        return string
       end
 
     end
