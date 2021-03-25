@@ -40,7 +40,8 @@ module JavaBuildpack
       end
 
       def agent_jar
-        @application.root + 'CodeInsight-Java.jar=CodeInsight-Java.xml '
+        string = @application.root + 'CodeInsight-Java.jar=CodeInsight-Java.xml '
+        string = string.delete_suffix(' .nil')
       end
 
     end
