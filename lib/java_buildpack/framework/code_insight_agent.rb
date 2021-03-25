@@ -2,7 +2,6 @@
 require 'fileutils'
 require 'java_buildpack/component/versioned_dependency_component'
 require 'java_buildpack/framework'
-require 'java_buildpack/logging/logger_factory'
 
 module JavaBuildpack
   module Framework
@@ -41,10 +40,7 @@ module JavaBuildpack
       end
 
       def agent_jar
-        string = @application.root + 'CodeInsight-Java.jar=CodeInsight-Java.xml '
-        string = string.delete_suffix(' .nil')
-        @logger.debug { "Code Insight String: #{string}" }
-      return string
+        string = @application.root + "CodeInsight-Java.jar=CodeInsight-Java.xml "
       end
 
     end
