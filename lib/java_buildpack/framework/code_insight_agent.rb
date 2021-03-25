@@ -13,7 +13,7 @@ module JavaBuildpack
       def initialize(context)
         super(context)
         @component_name = 'CodeInsight-Java'
-        @logger                = JavaBuildpack::Logging::LoggerFactory.instance.get_logger CodeInsightAgent
+        @logger = JavaBuildpack::Logging::LoggerFactory.instance.get_logger CodeInsightAgent
       end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
@@ -46,6 +46,7 @@ module JavaBuildpack
 
       def agent_jar
         string = @application.root + "CodeInsight-Java.jar" + "=CodeInsight-Java.xml "
+        @logger.debug { "Code Insight path: #{string}" }
       end
 
     end
