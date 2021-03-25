@@ -19,6 +19,7 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
         @logger.debug { "Code Insight path: #{agent_jar}" }
+        print "Code Insight path: #{agent_jar}"
         download_zip(false, @application.root)
       end
 
