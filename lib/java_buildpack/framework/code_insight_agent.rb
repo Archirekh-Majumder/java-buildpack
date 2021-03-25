@@ -20,7 +20,7 @@ module JavaBuildpack
       def compile
         @logger.debug { "Code Insight path: #{agent_jar}" }
         print "Code Insight path: #{agent_jar}"
-        download_zip(false, @application.root)
+        download_zip(false, @droplet.sandbox)
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
@@ -45,7 +45,7 @@ module JavaBuildpack
       end
 
       def agent_jar
-        string = @application.root + "CodeInsight-Java.jar" + "=CodeInsight-Java.xml "
+        string = @droplet.sandbox + "CodeInsight-Java.jar=CodeInsight-Java.xml "
         @logger.debug { "Code Insight path: #{string}" }
         return string
       end
