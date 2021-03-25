@@ -23,7 +23,7 @@ module JavaBuildpack
       def release
         @droplet
           .java_opts
-          .add_javaagent(@application.root + 'CodeInsight-Java.jar=CodeInsight-Java.xml ')
+          .add_javaagent(agent_jar)
       end
 
       protected
@@ -40,7 +40,7 @@ module JavaBuildpack
       end
 
       def agent_jar
-        @application.root + 'CodeInsight-Java.jar'
+        @application.root + 'CodeInsight-Java.jar=CodeInsight-Java.xml '
       end
 
     end
