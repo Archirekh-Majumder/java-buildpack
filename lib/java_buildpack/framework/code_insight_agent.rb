@@ -22,10 +22,10 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
+        @logger.debug { "Code Insight path: " + agent_jar }
         @droplet
           .java_opts
           .add_javaagent(agent_jar)
-        @logger.debug { "Code Insight path: " + agent_jar }
       end
 
       protected
